@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Spinner from './components/Spinner/Spinner';
 import Header from './components/Header/Header';
+import UserList from './components/UserList/UserList';
 
 import { getUsers } from './helpers/api';
 
@@ -16,14 +17,14 @@ class App extends Component {
   }
 
   handleSearchInput = (event) => {
-    console.log('handleSearchInput')
+    
     this.setState({
       search: event.target.value,
     });
   }
 
   handleClick = () => {
-    console.log('handleClick')
+    
     this.setState({
       isLoading: true,
     });
@@ -37,10 +38,10 @@ class App extends Component {
   }
 
   render() {
-    const { isLoading, search } = this.state;
+    const { isLoading, users } = this.state;
     const loading = isLoading
       ? <Spinner message='Loading' />
-      : <p>{search}</p>;
+      : <UserList users={users}/>;
     
     return (
       <div>
