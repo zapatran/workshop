@@ -1,0 +1,13 @@
+@keyframes spin {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.spinner {
+  text-align: center;
+  animation: spin 1s infinite;
+}
